@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        function yugioh(op){
+            let answer = [];
+
+            for(i = 1; i<=op;i++){
+                if (i%2==0){
+                    answer[(i-1)] = "yu";
+                }else{
+                    answer[(i-1)] = i;
+                }
+            }
+
+            for(i = 1;i<=op;i++){
+                if (i%3==0 && answer[(i-1)] == "yu"){
+                    answer[(i-1)] = "yu-gi";
+                }else if(i%3==0){
+                    answer[(i-1)] = "gi";
+                }else{
+                    answer[(i-1)] = answer[(i-1)];
+                }
+            }
+
+            for(i = 1;i<=op;i++){
+                if (i%5==0 && answer[(i-1)] == "yu"){
+                    answer[(i-1)] = "yu-oh";
+                }else if(i%5==0 && answer[(i-1)] == "yu-gi"){
+                    answer[(i-1)] = "yu-gi-oh";
+                }else if(i%5==0){
+                    answer[(i-1)] = "oh";
+                }
+                else{
+                    answer[(i-1)] = answer[(i-1)];
+                }
+            }
+
+            return answer;
+        }
+
+        let container = yugioh(100);
+        console.log(container);
+    </script>
+    
+</body>
+</html>
